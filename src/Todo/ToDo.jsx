@@ -30,10 +30,9 @@ export default function Todo() {
         setLista(auxLista);
     }
     return(
-        <div className="relampago">
-            <Link to="/">home</Link>
-            <h1>Lista de Carros</h1>
-            <img src={supra.jpg} alt="imagem" width="100" height="50"></img>
+        <div class="container">
+        <Link to="/">home</Link>
+        <h1>Lista de Carros</h1>
             <form onSubmit={salvar}>
                 <input type="text"
                 value={carros}
