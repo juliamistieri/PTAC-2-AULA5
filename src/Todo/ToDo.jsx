@@ -31,17 +31,23 @@ export default function Todo() {
     }
     return(
         <div class="container">
-        <Link to="/">home</Link>
+        <Link to="/">Voltar para o Home</Link>
+        <br></br>
+        <br></br>
         <h1>Lista de Carros</h1>
             <form onSubmit={salvar}>
+            <p>Adicionar Carro</p>
                 <input type="text"
                 value={carros}
                 onChange={(e)=>
                 {setCarros(e.target.value)}} />
+                <p>Adicionar Marca</p>
                 <input type="text"
                 value={marca}
                 onChange={(e)=>
                 {setMarca(e.target.value)}} />
+                <br></br>
+                <br></br>
                 <button>ADICIONAR</button>
             </form>
             {lista.map((carros)=>
