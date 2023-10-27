@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import "./style.css";
 
 export default function Todo() {
-    const [lista, setLista] = useState([]);
-    const [idCriar, setIdCriar] = useState(1);
+    
+    const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
+    const [lista, setLista] = useState(listaLocalStorage || []);
+    const [idCriar, setIdCriar] = useState(listaLocalStorage [listaLocalStorage.length - 1]?.id + 1 || 1);
     const [carros, setCarros] = useState("");
     const [marca, setMarca] = useState("");
+
+    useEffect(() => { localStorage.setItem("Lista", JSON.stringify(lista)) }, [lista]);
+
 
     const salvar = (e) => {
         e.preventDefault();
