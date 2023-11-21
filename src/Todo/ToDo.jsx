@@ -5,8 +5,8 @@ import "./style.css";
 
 export default function Todo() {
     
-    const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
-    const [lista, setLista] = useState(listaLocalStorage || []);
+    const listaLocalStorage = JSON.parse(localStorage.getItem("Lista")) || [];
+    const [lista, setLista] = useState(listaLocalStorage);
     const [idCriar, setIdCriar] = useState(listaLocalStorage [listaLocalStorage.length - 1]?.id + 1 || 1);
     const [carros, setCarros] = useState("");
     const [marca, setMarca] = useState("");
